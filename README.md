@@ -2,14 +2,17 @@
 
 API to be used as a backend to a gratitude journal app.
 
-## Getting Started
-
-Coming soon
-
 ### Installing
 
-Coming soon
+```
+wget https://github.com/niross/gratus-server/archive/master.zip
+unzip master.zip
+cd gratus-server-master
+npm i
+npm start
+```
 
+Visit http://localhost:3000/api/
 
 ## Running the tests
 
