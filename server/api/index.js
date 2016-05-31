@@ -1,7 +1,9 @@
 import { Router } from 'express';
 import { appVersion } from '../../config';
 
-export default function () {
+import users from './users';
+
+export default function() {
   const api = Router();
 
   // Expose the version number at the root
@@ -10,6 +12,9 @@ export default function () {
       version: appVersion
     });
   });
+
+  // Mount the users resource
+  api.use('/accounts', users);
 
   return api;
 }
