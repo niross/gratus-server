@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { appVersion } from '../../config';
 
+import posts from './posts';
 import users from './users';
 
 export default function() {
@@ -12,6 +13,9 @@ export default function() {
       version: appVersion
     });
   });
+
+  // Mount the posts resource
+  api.use('/posts', posts);
 
   // Mount the users resource
   api.use('/accounts', users);
