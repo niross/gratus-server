@@ -9,6 +9,12 @@ const router = express.Router();
 
 router.route('/register')
   .post((req, res) => {
+    // Ensure valid email was provided
+    const emailRegex = /^[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!emailRegex.test(req.body.email)) {
+      return res.status(400).json({ error: 'Please enter a valid email address' });
+    }
+
     const user = new User({
       email: req.body.email,
       password: req.body.password,
