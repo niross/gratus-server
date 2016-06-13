@@ -10,6 +10,7 @@ const router = express.Router();
 router.route('/register')
   .post((req, res) => {
     // Ensure valid email was provided
+    console.log('checking email', req.body);
     const emailRegex = /^[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (!emailRegex.test(req.body.email)) {
       return res.status(400).json({ error: 'Please enter a valid email address' });
@@ -23,7 +24,7 @@ router.route('/register')
 
     user.save((err) => {
       if (err) return res.status(400).json({ error: 'Email address already exists' });
-      res.status(201).json();
+      res.status(201).json(user);
     });
   });
 
