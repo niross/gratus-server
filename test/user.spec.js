@@ -85,7 +85,7 @@ describe('User API', () => {
         password: '123456'
       })
       .expect((res) => {
-        expect(res.body).to.have.key('token');
+        expect(res.body.token).to.exist();
       })
       .expect(200)
       .end(done);
