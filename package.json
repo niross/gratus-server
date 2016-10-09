@@ -26,7 +26,8 @@
     "multer-s3": "^2.3.2",
     "passport": "^0.3.2",
     "passport-jwt": "^2.0.0",
-    "resource-router-middleware": "^0.6.0"
+    "resource-router-middleware": "^0.6.0",
+    "uuid": "^2.0.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
